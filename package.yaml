@@ -1,0 +1,79 @@
+# TicTacToe - Copyright (C) 2023 skywalker<j.karlsson@retrocoder.se>
+name:                GameOfLife
+version:             0.1.0.0
+github:              "retrocoder68/GameOfLife"
+license:             GPL-2
+author:              "Skywalker"
+maintainer:          "j.karlsson@retrocoder.se"
+copyright:           "2023 Skywalker <j.karlsson@retrocoder.se>"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+synopsis:            Conway's Game of Life using SDL2
+category:            game
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/retrocoder68/GameOfLife#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- random >= 1.1
+- sdl2
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  GameOfLife:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - GameOfLife
+
+tests:
+  GameOfLife-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - GameOfLife
+
+# License
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2 as
+# published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.
+# If not, see <http://www.gnu.org/licenses/> or write to the
+# Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor,
+# Boston, MA 02110-1301
+# USA
